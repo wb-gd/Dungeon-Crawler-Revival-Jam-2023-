@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://coqr7wt6of31h"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3iph8"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_3iph8")
+Duration = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Forward Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
+target_position = Vector3(0, 0, -0.5)
+
+[node name="Backwards Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.25)
+target_position = Vector3(0, 0, 0.5)
+
+[node name="Left Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, 0)
+target_position = Vector3(-0.5, 0, 0)
+
+[node name="Right Ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, 0)
+target_position = Vector3(0.5, 0, 0)

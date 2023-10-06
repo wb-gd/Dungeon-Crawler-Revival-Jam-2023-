@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc7ad7vs20twg"]
+[gd_scene load_steps=4 format=3 uid="uid://dc7ad7vs20twg"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_lsckv"]
 [ext_resource type="PackedScene" uid="uid://ddodj67sj3q2l" path="res://Scenes/map.tscn" id="2_eenlm"]
+[ext_resource type="PackedScene" uid="uid://coqr7wt6of31h" path="res://Scenes/player.tscn" id="3_dafd0"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_lsckv")
 Map = ExtResource("2_eenlm")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.941471, 0.337095, 0, -0.337095, 0.941471, 0, 4.925, 4.32)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.73405, 0, -0.679096, 0.33432, 0.870425, 0.361374, 0.591101, -0.492302, 0.638935, 0, 0, 0)
+light_energy = 0.5
+
+[node name="Rooms" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_dafd0")]
